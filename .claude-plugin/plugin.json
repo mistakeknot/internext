@@ -1,10 +1,21 @@
 {
   "name": "internext",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Work prioritization and next-task analysis for Claude Code — tradeoff-aware recommendations from project state.",
-  "author": { "name": "MK", "email": "mistakeknot@vibeguider.org" },
+  "author": {
+    "name": "MK",
+    "email": "mistakeknot@vibeguider.org"
+  },
   "repository": "https://github.com/mistakeknot/internext",
   "license": "MIT",
-  "keywords": ["prioritization", "planning", "tradeoffs", "beads", "backlog"],
-  "skills": ["./skills/next-work"]
+  "keywords": [
+    "prioritization",
+    "planning",
+    "tradeoffs",
+    "beads",
+    "backlog"
+  ],
+  "skills": [
+    "./skills/next-work"
+  ]
 }
