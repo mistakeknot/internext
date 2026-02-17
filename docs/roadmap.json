@@ -1,0 +1,15 @@
+{
+  "module_summary": "Internext prioritizes work proposals and tradeoffs with explicit value-risk scoring.",
+  "roadmap": {
+    "now": [
+      {"id": "INXT-N1", "title": "Improve prioritization explainability and confidence thresholds for recommendations.", "priority": "P1"}
+    ],
+    "next": [
+      {"id": "INXT-N2", "title": "Tie prioritization output to open bead state and blocker context.", "priority": "P2"},
+      {"id": "INXT-N3", "title": "Add scenario-based tradeoff simulation for high-cost roadmap shifts.", "priority": "P2"},
+      {"id": "INXT-L1", "title": "Build governance presets for automated portfolio-level planning policies.", "priority": "P2"}
+    ],
+    "later": [
+    ]
+  }
+}
