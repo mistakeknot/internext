@@ -1,6 +1,6 @@
 {
   "name": "internext",
-  "version": "0.1.2",
+  "version": "0.3.3",
   "description": "Work prioritization and next-task analysis for Claude Code — tradeoff-aware recommendations from project state.",
   "author": {
     "name": "MK",
