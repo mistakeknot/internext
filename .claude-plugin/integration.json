@@ -1,0 +1,17 @@
+{
+  "ecosystem": "interverse",
+  "interbase_min_version": "1.0.0",
+  "ecosystem_only": false,
+  "standalone_features": [
+    "Work prioritization with impact/effort/risk scoring",
+    "Tradeoff-aware next-task recommendations"
+  ],
+  "integrated_features": [
+    { "feature": "Historical effort calibration from interstat", "requires": "interstat" },
+    { "feature": "Discovery confidence boost from interject", "requires": "interject" }
+  ],
+  "companions": {
+    "recommended": [],
+    "optional": ["interstat", "interject"]
+  }
+}
