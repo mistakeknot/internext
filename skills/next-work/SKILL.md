@@ -19,6 +19,13 @@ Collect all of these in parallel (all `bd` commands from project root):
 5. **Recent completions** — `bd list --status=closed` (last ~10) — momentum and context for what just shipped
 6. **Recent brainstorms/plans** — check `docs/brainstorms/`, `docs/plans/`, `docs/prds/` for documents from today or recent days that indicate strategic direction
 7. **Claim checks** — For each in-progress bead from step 1, run `bd state <id> claimed_by` and `bd state <id> claimed_at` to determine if another session holds it. Values of `(no claimed_by state set)`, `released`, `unknown`, or empty mean unclaimed. A `claimed_at` within 2700 seconds (45 min) of now means the claim is fresh/active.
+8. **Recent file activity (if cass available)** — For the top 2-3 candidate beads, check what recent sessions touched related files:
+   ```bash
+   if command -v cass > /dev/null 2>&1; then
+       cass context <primary_file_path> --json --limit 3 2>/dev/null
+   fi
+   ```
+   This surfaces which beads have recent session momentum (another agent was just working on related files) vs which are cold starts. Factor into effort estimates — warm context = lower switching cost.
 
 When analyzing a specific module, filter the results: `bd list --status=open 2>&1 | grep -i '<module>'`
 
