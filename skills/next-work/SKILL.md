@@ -43,7 +43,11 @@ For each candidate (focus on ready P0-P2 items, mention P3+ only if especially i
 
 ### Claim status
 
-For each in-progress bead, annotate: **Unclaimed** (no `claimed_by`, or `released`/`unknown`), **Actively claimed** (`claimed_at` < 45 min old — show first 8 chars of session ID), or **Stale claim** (`claimed_at` > 45 min old — treat as unclaimed).
+For each in-progress bead, annotate claim status with graduated freshness:
+- **Unclaimed** (no `claimed_by`, or `released`/`unknown`) — fully available
+- **Hot claim** (`claimed_at` < 15 min) — actively being worked, skip entirely
+- **Warm claim** (`claimed_at` 15-45 min) — likely still active, deprioritize but mention as fallback
+- **Stale claim** (`claimed_at` > 45 min) — treat as unclaimed, note session ID for context
 
 ### Identify dependency leverage
 
