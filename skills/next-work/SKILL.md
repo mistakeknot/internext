@@ -92,3 +92,18 @@ If you recommend a multi-step sequence, keep it to 2 items max — don't plan th
 - **Unblocking > building.** An item that unblocks 3 others is worth more than a standalone feature.
 - **Research has diminishing returns.** One research bead per session is sharpening the saw. Three is procrastination.
 - **Claim-aware.** Never recommend work actively held by another session. Freshness window is 45 minutes.
+
+## Companion: top-skills
+
+For surfacing relevant *skills* (rather than beads), use the companion script:
+
+```bash
+python3 ${CLAUDE_PLUGIN_ROOT}/scripts/top-skills.py --n=3 --days=30
+# top skills for sylveste (last 30d): clavain:work (47), flux-review (12), clavain:sprint (8)
+```
+
+Reads `~/.claude/audit.log` (the PostToolUse invocation log, schema documented in [audit-log-schema.md](https://github.com/mistakeknot/Sylveste/blob/main/docs/contracts/audit-log-schema.md)) and ranks skills by recent-weighted invocation count. Detects project type from CWD (pyproject.toml → python, .beads + interverse/ → sylveste, etc.). Pass `--json` for structured output.
+
+If the audit log isn't present, the script exits non-zero with a single stderr line — callers should treat that as "no recommendation" rather than fatal. The log is populated by the PostToolUse hook from Sylveste-xn5 (`~/.claude/hooks/log-tool-invocation.sh`).
+
+**Why a separate script, not the main skill:** the next-work skill is a high-touch analytical pass that calls many `bd` commands and reasons across project state. Skill ranking is a small, fast statistical operation that doesn't need an LLM in the loop. Two-tier surface keeps both fast: invoke the SKILL when you need a thinking pass; pipe `top-skills.py` output into any context where a one-line recommendation is wanted.
