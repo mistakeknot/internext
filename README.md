@@ -1,6 +1,6 @@
 # internext
 
-Work prioritization for Claude Code.
+Work prioritization for Claude Code, Codex, and Kimi Code.
 
 ## What this does
 
