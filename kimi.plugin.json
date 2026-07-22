@@ -1,0 +1,19 @@
+{
+  "name": "internext",
+  "version": "0.1.5",
+  "description": "Work prioritization and next-task analysis for Claude Code — tradeoff-aware recommendations from project state.",
+  "license": "MIT",
+  "keywords": [
+    "prioritization",
+    "planning",
+    "tradeoffs",
+    "beads",
+    "backlog"
+  ],
+  "author": "MK",
+  "interface": {
+    "displayName": "internext",
+    "shortDescription": "Work prioritization and next-task analysis for Claude Code — tradeoff-aware recommendations from project state."
+  },
+  "skills": "./skills/"
+}
